@@ -9,7 +9,7 @@ if [ $? = 0 ]; then
   else
     echo "Backing up pre-existing dot files.";
     mkdir -p .config-backup
-    $dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+    $dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | cut -d/ -f1 | uniq | xargs -I{} mv {} .config-backup/{}
     $dotfiles checkout
 fi;
 
