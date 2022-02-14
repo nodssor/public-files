@@ -2,7 +2,7 @@
 # ex: curl -Lks https://raw.githubusercontent.com/nodssor/public-files/main/boostrap.sh
 set -x
 /usr/bin/git clone --bare git@github.com:nodssor/.dotfiles.git $HOME/.dotfiles
-dotfiles="/usr/bin/git --git-dir=~/.dotfiles/ --work-tree=~/."
+dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 $dotfiles checkout
 if [ $? = 0 ]; then
   echo "Checked out config.";
