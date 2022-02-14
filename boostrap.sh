@@ -3,7 +3,7 @@
 set -x
 /usr/bin/git clone --bare git@github.com:nodssor/.dotfiles.git $HOME/.dotfiles
 dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-$dotfiles checkout 2>&1 > /dev/null
+$dotfiles checkout > /dev/null 2>&1 
 if [ $? = 0 ]; then
   echo "Checked out config.";
   else
